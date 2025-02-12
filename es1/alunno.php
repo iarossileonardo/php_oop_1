@@ -1,9 +1,9 @@
 <?php
     class Alunno {
-        protected $nome;
-        protected $cognome;
-        protected $eta;
-    }
+    protected $nome;
+    protected $cognome;
+    protected $eta;
+    
 
     function __construct($nome, $cognome, $eta) {
         $this->nome = $nome;
@@ -35,7 +35,8 @@
         $this->eta;
     }
 
-    function stampaAlunno() {
-        echo "{$nome} {$cognome}, {$eta} anni."
+    public function stampaAlunno() {
+        echo "{$this->nome} {$this->cognome}, {$this->eta} anni. <br>";
     }
+}
 ?>
