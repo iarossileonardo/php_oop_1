@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
+<?php
+        header("Content-Type: application/json");
         require_once "./Animale.php";
         require_once "./Cane.php";
 
         $animale = new Animale();
         $cane = new Cane();
 
-        $animale->verso();
-        $cane->verso();
-    ?>
-</body>
-</html>
+        echo json_encode($cane);
+?>
