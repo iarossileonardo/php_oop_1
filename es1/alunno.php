@@ -1,8 +1,16 @@
 <?php
-    class Alunno {
+    class Alunno implements JsonSerializable{
     protected $nome;
     protected $cognome;
     protected $eta;
+    
+    public function jsonSerialize(): array{
+        return [
+            'name' => $this->nome,
+            'surname' => $this->cognome,
+            'age' => $this->eta + 1
+        ];
+    }
     
 
     function __construct($nome, $cognome, $eta) {
@@ -33,10 +41,6 @@
 
     function set_eta() {
         $this->eta;
-    }
-
-    public function stampaAlunno() {
-        echo "{$this->nome} {$this->cognome}, {$this->eta} anni. <br>";
     }
 }
 ?>
